@@ -4,12 +4,30 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+// class MyApp extends StatelessWidget {
+//   var questionIndex = 0;
+
+//   void answerQuestion() {
+//     questionIndex = questionIndex + 1;
+//     print(questionIndex);
+//   }
+// }
+
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return MyAppState();
+  }
+}
+
+class MyAppState extends State<MyApp> {
   var questionIndex = 0;
 
   void answerQuestion() {
-    questionIndex = questionIndex + 1;
-    print(questionIndex);
+    setState(() {
+      questionIndex = questionIndex + 1;
+    });
+    //questionIndex of our code is the one that will be updated.
   }
 
   @override
